@@ -5,14 +5,13 @@ import ChartRace from 'react-chart-race';
 const url = "http://localhost:4000/"
 
 function App() {
-  const [data = [], setData] = useState([])
+  const [data , setData] = useState([])
   useEffect(() => {
     const io = socketClient(url)
     io.connect()
     io.on("message", (data) => {
-      console.log(data)
       setData(data)
-    }, [])
+    },  [])
     return () => {
       io.disconnect()
     }
