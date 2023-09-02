@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import socketClient  from 'socket.io-client';
 //import moment from "moment";
 import ChartRace from 'react-chart-race';
-const url = "http://localhost:4000/"
+const url = "https://sgn-test-service.onrender.com"
 
 function App() {
   const [data , setData] = useState([])
@@ -18,7 +18,7 @@ function App() {
   })
   return (
     <div>
-      Welcome
+      SGN-TEST-BAR CHART
       <ChartRace
         data = {data}
         backgroundColor = '#797979'
