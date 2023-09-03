@@ -14,7 +14,9 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.8.0",
     "socket.io-client": "^4.7.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "start": "PORT=4001 react-scripts start",
