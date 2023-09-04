@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 function HeaderBar(){
     return (
-        <h2>SGN-TEST-BAR CHART</h2>
+        <h1>SGN TEST JOB</h1>
     )
 }
 

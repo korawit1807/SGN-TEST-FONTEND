@@ -3,24 +3,24 @@ import config from '../config';
 import io from '../socket';
 import moment from 'moment'
 function DisplayDate(){
-    const [ data, setData]  = useState([])
+    const [ date, setDate]  = useState([])
     
     useEffect(()=>{
         let initDate = new Date(config.initDate)
         setInterval(()=>{
-            if(initDate === "2022-07-31"){
+            initDate = moment(initDate).add(1, 'days').format("YYYY-MM-DD")
+            setDate(initDate)
+            io.emit("getDate", initDate)
+            if(initDate === "2020-04-30"){
                 initDate = new Date(config.initDate)
             } 
-            io.emit("getDate", initDate)
-            initDate = moment(initDate).add(1, 'days').format("YYYY-MM-DD")
-            setData(initDate)
-        }, 3000)
+        }, 2000)
         return () => {
             io.disconnect()
         }
     }, [])
     return (
-        <h3>{data}</h3>
+        <h3>Date: {date}</h3>
     )
 }
 
